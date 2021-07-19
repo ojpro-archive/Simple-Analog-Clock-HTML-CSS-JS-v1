@@ -1,1 +1,125 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+body {
+  background-color: #282828;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+}
+.container .clock {
+  width: 30rem;
+  height: 30rem;
+  position: relative;
+  padding: 1rem;
+  border: 6px solid #282828;
+  box-shadow: -2px -2px 6px rgba(67, 67, 67, 0.5), inset 2px 2px 6px rgba(0, 0, 0, 0.5), inset -2px -2px 6px rgba(67, 67, 67, 0.5), 2px 2px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  margin: 40px auto;
+}
+.container .clock .outer-clock-face {
+  position: relative;
+  background-color: #282828;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.container .clock .outer-clock-face::after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.container .clock .outer-clock-face::after, .container .clock .outer-clock-face::before, .container .clock .outer-clock-face .marker {
+  content: "";
+  position: absolute;
+  left: 49.4%;
+  width: 5px;
+  height: 100%;
+  background: #1df52f;
+  z-index: 0;
+  border-radius: 8px;
+}
+.container .clock .outer-clock-face .marker {
+  background: #bdbdcb;
+  width: 3px;
+}
+.container .clock .outer-clock-face .marker.marker-one {
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.container .clock .outer-clock-face .marker.marker-two {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+.container .clock .outer-clock-face .marker.marker-three {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+.container .clock .outer-clock-face .marker.marker-four {
+  -webkit-transform: rotate(150deg);
+  -moz-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+.container .clock .inner-clock-face {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: #282828;
+  border-radius: 100%;
+}
+.container .clock .inner-clock-face::before {
+  content: "";
+  position: absolute;
+  left: 50.2%;
+  top: 49%;
+  width: 16px;
+  height: 16px;
+  border-radius: 18px;
+  margin-left: -9px;
+  margin-top: -6px;
+  background-color: #4d4b63;
+  z-index: 5;
+}
+.container .clock .hand {
+  width: 50%;
+  height: 5px;
+  background: #61afff;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.container .clock .hand.hour-hand {
+  width: 20%;
+  z-index: 1;
+}
+.container .clock .hand.min-hand {
+  height: 3px;
+  width: 28%;
+  z-index: 2;
+}
+.container .clock .hand.second-hand {
+  background-color: #ee791a;
+  width: 35%;
+  height: 2px;
+}
