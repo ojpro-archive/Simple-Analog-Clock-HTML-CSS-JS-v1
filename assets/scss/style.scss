@@ -90,6 +90,7 @@ body {
                 &.marker-two {
                     @include rotate(60deg)
                 }
+
                 &.marker-three {
                     @include rotate(120deg)
                 }
