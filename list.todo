@@ -1,0 +1,3 @@
+[SCSS]:
+- make variable for each color
+- mixins for repeated styles(rotate)
