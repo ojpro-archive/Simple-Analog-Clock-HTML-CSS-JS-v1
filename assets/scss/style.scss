@@ -1,6 +1,18 @@
+// Helps
+@mixin rotate($degree) {
+    -webkit-transform: rotate($degree);
+    -moz-transform: rotate($degree);
+    transform: rotate($degree);
+}
+
 // Colors
 $main-color: #282828;
-
+$green:#1df52f;
+$gray:#bdbdcb;
+$dark-gray:#4d4b63;
+$light-blue:#409af5;
+$purple:#6347fd;
+$orange:#f08a38;
 // Styles
 
 $darkest-clock-shadow:2px 2px 6px rgba(0, 0, 0, .5);
@@ -51,9 +63,7 @@ body {
             border-radius: 100%;
 
             &::after {
-                -webkit-transform: rotate(90deg);
-                -moz-transform: rotate(90deg);
-                transform: rotate(90deg);
+                @include rotate(90deg)
             }
 
             &::after,
@@ -64,37 +74,28 @@ body {
                 left: 49.4%;
                 width: 5px;
                 height: 100%;
-                background: #1df52f;
+                background: $green;
                 z-index: 0;
                 border-radius: 8px;
             }
 
             & .marker {
-                background: #bdbdcb;
+                background: $gray;
                 width: 3px;
 
                 &.marker-one {
-                    -webkit-transform: rotate(30deg);
-                    -moz-transform: rotate(30deg);
-                    transform: rotate(30deg);
+                    @include rotate(30deg)
                 }
 
                 &.marker-two {
-                    -webkit-transform: rotate(60deg);
-                    -moz-transform: rotate(60deg);
-                    transform: rotate(60deg);
+                    @include rotate(60deg)
                 }
-
                 &.marker-three {
-                    -webkit-transform: rotate(120deg);
-                    -moz-transform: rotate(120deg);
-                    transform: rotate(120deg);
+                    @include rotate(120deg)
                 }
 
                 &.marker-four {
-                    -webkit-transform: rotate(150deg);
-                    -moz-transform: rotate(150deg);
-                    transform: rotate(150deg);
+                    @include rotate(150deg)
                 }
             }
         }
@@ -118,7 +119,7 @@ body {
                 border-radius: 18px;
                 margin-left: -9px;
                 margin-top: -6px;
-                background-color: #4d4b63;
+                background-color: $dark-gray;
                 z-index: 5;
             }
         }
@@ -126,13 +127,13 @@ body {
         .hand {
             width: 50%;
             height: 4px;
-            background: #409af5;
+            background: $light-blue;
             position: absolute;
             right: 50%;
             top: 50%;
             border-radius: 8px;
             transform-origin: 100%;
-            transform: rotate(90deg);
+            @include rotate(90deg);
             transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 
             &.hour-hand {
@@ -144,11 +145,11 @@ body {
                 height: 3px;
                 width: 26%;
                 z-index: 2;
-                background-color: #6347fd;
+                background-color: $purple;
             }
 
             &.second-hand {
-                background-color: #f08a38;
+                background-color: $orange;
                 width: 32%;
                 height: 2px;
             }
