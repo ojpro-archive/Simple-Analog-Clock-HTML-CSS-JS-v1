@@ -30,8 +30,8 @@ body {
 
     .clock {
         background-color: $main-color;
-        width: 30rem;
-        height: 30rem;
+        width: 28rem;
+        height: 28rem;
         position: relative;
         padding: 1rem;
         border: 6px solid $main-color;
@@ -125,12 +125,12 @@ body {
 
         .hand {
             width: 50%;
-            height: 5px;
-            background: #3c9eff;
+            height: 4px;
+            background: #409af5;
             position: absolute;
             right: 50%;
             top: 50%;
-            border-radius: 6px;
+            border-radius: 8px;
             transform-origin: 100%;
             transform: rotate(90deg);
             transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
@@ -142,14 +142,14 @@ body {
 
             &.min-hand {
                 height: 3px;
-                width: 28%;
+                width: 26%;
                 z-index: 2;
-                background-color: #583bfc;
+                background-color: #6347fd;
             }
 
             &.second-hand {
-                background-color: #ee791a;
-                width: 35%;
+                background-color: #f08a38;
+                width: 32%;
                 height: 2px;
             }
         }
